@@ -580,6 +580,17 @@ body {
   transform: translateY(-3px);
 }
 
+/* dark mode contrast for secondary buttons (Подробнее, etc.) */
+[data-theme="dark"] .btn-secondary {
+  color: var(--text-light);
+  border-color: var(--text-light);
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 .hero-social {
   display: flex;
   align-items: center;
