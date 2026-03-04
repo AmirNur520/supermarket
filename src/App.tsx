@@ -3,6 +3,7 @@ import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import Preloader from './components/Preloader'
 import img4 from './assets/img4.jpg'
+import { FaFacebookF, FaTwitter, FaInstagram, FaTelegramPlane } from 'react-icons/fa'
 
 
 const Home = lazy(() => import('./components/Home'))
@@ -289,10 +290,18 @@ function App() {
             <div className="footer-col">
               <h4>Свяжитесь с нами</h4>
               <div className="social-links">
-                <a href="#" className="social-link" title="Facebook">📘</a>
-                <a href="#" className="social-link" title="Twitter">🐦</a>
-                <a href="#" className="social-link" title="Instagram">📷</a>
-                <a href="#" className="social-link" title="Telegram">📱</a>
+                <a href="#" className="social-link" title="Facebook">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="social-link" title="Twitter">
+                  <FaTwitter />
+                </a>
+                <a href="#" className="social-link" title="Instagram">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="social-link" title="Telegram">
+                  <FaTelegramPlane />
+                </a>
               </div>
             </div>
           </div>
