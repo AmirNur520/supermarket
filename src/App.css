@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  html[data-theme="dark"] .navbar .nav-menu {
+    background: #07101a !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+
+  html[data-theme="dark"] .navbar .nav-menu .nav-link {
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255,255,255,0.03) !important;
+    opacity: 1 !important;
+  }
+
+  html[data-theme="dark"] .navbar .nav-menu .nav-link:hover {
+    color: var(--primary-light) !important;
+  }
+
+  html[data-theme="dark"] .navbar .burger-menu span {
+    background: #ffffff !important;
+  }
+}
+
 :root {
   --primary-dark: #059669;
   --primary-light: #10B981;
@@ -77,6 +98,47 @@ html {
   background: rgba(16,185,129,0.2);
 }
 
+[data-theme="dark"] .nav-menu {
+  background: var(--bg-white);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+[data-theme="dark"] .nav-menu .nav-link {
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+[data-theme="dark"] .nav-menu .nav-link:hover {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .burger-menu span {
+  background: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  [data-theme="dark"] .nav-menu {
+    background: #0b1220 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+
+  [data-theme="dark"] .nav-menu .nav-link {
+    color: #f8fafc !important;
+    border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+  }
+
+  [data-theme="dark"] .nav-menu .nav-link:hover {
+    color: var(--primary-light) !important;
+  }
+
+  [data-theme="dark"] .nav-menu::before {
+    content: none;
+  }
+
+  [data-theme="dark"] .burger-menu span {
+    background: #f8fafc !important;
+  }
+}
 body {
   font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--bg-light);
@@ -184,8 +246,24 @@ body {
   padding: 0;
 }
 
+[data-theme="dark"] .nav-menu {
+  background: #07101a;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
 [data-theme="dark"] .nav-link {
   color: var(--text-light);
+  background: transparent;
+}
+
+/* light theme explicit rules to ensure inverse behavior */
+[data-theme="light"] .nav-menu {
+  background: rgba(255,255,255,0.95);
+}
+
+[data-theme="light"] .nav-link {
+  color: var(--text-dark);
+  background: transparent;
 }
 
 .nav-link::before {
@@ -925,6 +1003,55 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Strong fallback: cover common "open/active/show" states and any overlays
+   Ensure mobile dark menu is always high-contrast and fully opaque */
+@media (max-width: 768px) {
+  html[data-theme="dark"] .navbar .nav-menu,
+  html[data-theme="dark"] .navbar .nav-menu.open,
+  html[data-theme="dark"] .navbar .nav-menu.active,
+  html[data-theme="dark"] .navbar .nav-menu.show,
+  html[data-theme="dark"] .navbar .nav-menu[aria-hidden="false"] {
+    background: #07101a !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    backdrop-filter: none !important;
+  }
+
+  html[data-theme="dark"] .navbar .nav-menu *,
+  html[data-theme="dark"] .navbar .nav-menu *::before,
+  html[data-theme="dark"] .navbar .nav-menu *::after {
+    background: transparent !important;
+    color: inherit !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+
+  html[data-theme="dark"] .navbar .nav-menu .nav-link,
+  html[data-theme="dark"] .navbar .nav-menu.open .nav-link,
+  html[data-theme="dark"] .navbar .nav-menu.active .nav-link,
+  html[data-theme="dark"] .navbar .nav-menu.show .nav-link {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  /* remove any decorative pseudo elements from interfering */
+  html[data-theme="dark"] .navbar .nav-menu::before,
+  html[data-theme="dark"] .navbar .nav-menu::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* keep the burger bars clear and visible */
+  html[data-theme="dark"] .navbar .burger-menu span {
+    background: #ffffff !important;
   }
 }
 
