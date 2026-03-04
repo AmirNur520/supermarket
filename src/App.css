@@ -6,8 +6,8 @@
 
 @media (max-width: 768px) {
   html[data-theme="dark"] .navbar .nav-menu {
-    background: #07101a !important;
-    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    background: transparent !important;
+    border-bottom: none !important;
   }
 
   html[data-theme="dark"] .navbar .nav-menu .nav-link {
@@ -247,8 +247,9 @@ body {
 }
 
 [data-theme="dark"] .nav-menu {
-  background: #07101a;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  /* remove colored strip behind links */
+  background: transparent;
+  border-bottom: none;
 }
 
 [data-theme="dark"] .nav-link {
@@ -258,7 +259,7 @@ body {
 
 /* light theme explicit rules to ensure inverse behavior */
 [data-theme="light"] .nav-menu {
-  background: rgba(255,255,255,0.95);
+  background: transparent;
 }
 
 [data-theme="light"] .nav-link {
